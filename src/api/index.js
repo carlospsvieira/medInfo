@@ -6,12 +6,15 @@ export default async function getMedicationByName(medName) {
       "X-RapidAPI-Host": "drug-info-and-price-history.p.rapidapi.com",
     },
   };
-  
-  const request = await fetch(
-    `https://drug-info-and-price-history.p.rapidapi.com/1/druginfo?drug=${medName}`,
-    options
-  );
-  const response = await request.json();
-  console.log("🚀 ~ file: index.js:15 ~ getMedicationByName ~ response", response)
-  return response[0];
+  try {
+    const request = await fetch(
+      `https://drug-info-and-price-history.p.rapidapi.com/1/druginfo?drug=${medName}`,
+      options
+    );
+    const response = await request.json();
+    return response;
+  } catch (err) {
+    console.log(err);
+    return;
+  }
 }
