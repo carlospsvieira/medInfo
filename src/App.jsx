@@ -4,6 +4,7 @@ import Results from "./components/Results";
 import { ToastContainer } from "react-toastify";
 import 'react-toastify/dist/ReactToastify.css'
 import Navbar from "./components/Navbar";
+import About from "./components/About";
 
 function App() {
   return (
@@ -12,6 +13,7 @@ function App() {
       <Navbar />
       <Hero />
       <Results />
+      <About />
     </div>
   );
 }

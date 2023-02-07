@@ -1,11 +1,10 @@
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
 import getMedicationByName from "../api";
 import { Context } from "../context/StateProvider";
 import { toast } from "react-toastify";
-import heroBG from "../images/hero-bg.jpg";
 
 function Hero() {
-  const { setMedInfo, search, setSearch } = useContext(Context);
+  const { setMedInfo, search, setSearch, ref } = useContext(Context);
 
   const handleChange = ({ target }) => {
     const { value } = target;
@@ -24,11 +23,12 @@ function Hero() {
     } else {
       setMedInfo(data);
       setSearch("");
+      ref.current?.scrollIntoView({behavior: 'smooth', top: '5rem'});
     }
   };
 
   return (
-    <div className="flex justify-around h-screen bg-slate-50 hero">
+    <div id="hero" className="flex justify-around h-screen bg-slate-50 hero">
       <form onSubmit={handleClick}>
         <div className="flex flex-col items-end mt-52 px-4">
           <div className="flex flex-col my-2">
@@ -44,12 +44,22 @@ function Hero() {
               placeholder="e.g., Advil"
             />
           </div>
-          <button
-            className="bg-cyan-600 font-bold text-white py-2 px-5 rounded-md text-sm shadow-sm hover:bg-cyan-700 transition-all"
+          <a
+            className="bg-cyan-600 font-bold 
+              text-white 
+              py-2 
+              px-5 
+              rounded-md 
+              text-sm 
+              shadow-sm 
+              hover:bg-cyan-700 
+              transition-all
+              cursor-pointer"
             type="submit"
+            onClick={handleClick}
           >
             Search
-          </button>
+          </a>
         </div>
       </form>
     </div>

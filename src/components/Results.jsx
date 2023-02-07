@@ -3,10 +3,10 @@ import { Context } from "../context/StateProvider";
 import logo from "../images/logo.png";
 
 function Results() {
-  const { medInfo } = useContext(Context);
+  const { medInfo, ref } = useContext(Context);
 
   return (
-    <div className="flex items-center bg-slate-100 justify-center gap-40 h-screen pt-16">
+    <div id="result" ref={ref} className="flex items-center bg-slate-100 justify-center gap-40 h-screen pt-16">
       {medInfo.length === 0 ? (
         <p className="text-2xl">Your search result will appear here.</p>
       ) : (

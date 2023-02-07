@@ -15,7 +15,8 @@
   object-fit: cover;
 }
 
-.nav-btns button:hover {
+.nav-btns a:hover {
+  cursor: pointer;
   border-bottom: 2px solid rgb(54, 54, 54);
   margin-bottom: -1px;
 }
