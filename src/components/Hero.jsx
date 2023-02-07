@@ -2,9 +2,11 @@ import React, { useContext, useState } from "react";
 import getMedicationByName from "../api";
 import { Context } from "../context/StateProvider";
 import { toast } from "react-toastify";
+import Loading from "./Loading";
 
 function Hero() {
   const { setMedInfo, search, setSearch, ref } = useContext(Context);
+  const [loading, setLoading] = useState(false);
 
   const handleChange = ({ target }) => {
     const { value } = target;
@@ -13,17 +15,23 @@ function Hero() {
 
   const handleClick = async (e) => {
     e.preventDefault();
+    setLoading(true);
     const data = await getMedicationByName(search);
+
+    // check if data is valid //
     if (!search || typeof data === "string") {
+      // pass a toast error //
       toast.error("Couldn't find a match", {
         position: toast.POSITION.TOP_CENTER,
         autoClose: 2000,
         toastId: "do-not-duplicate",
       });
     } else {
+      // add data, clean input and scroll to result area //
       setMedInfo(data);
       setSearch("");
-      ref.current?.scrollIntoView({behavior: 'smooth', top: '5rem'});
+      ref.current?.scrollIntoView({ behavior: "smooth", top: "5rem" });
+      setLoading(false);
     }
   };
 
@@ -46,21 +54,22 @@ function Hero() {
           </div>
           <a
             className="bg-cyan-600 font-bold 
-              text-white 
-              py-2 
-              px-5 
-              rounded-md 
-              text-sm 
-              shadow-sm 
-              hover:bg-cyan-700 
-              transition-all
-              cursor-pointer"
+            text-white 
+            py-2 
+            px-5 
+            rounded-md 
+            text-sm 
+            shadow-sm 
+            hover:bg-cyan-700 
+            transition-all
+            cursor-pointer"
             type="submit"
             onClick={handleClick}
           >
             Search
           </a>
         </div>
+        <p className="text-center">{loading && <Loading />}</p>
       </form>
     </div>
   );
