@@ -8,10 +8,10 @@ function Results() {
   return (
     <div id="result" ref={ref} className="flex items-center bg-slate-100 justify-center gap-40 h-screen pt-16">
       {medInfo.length === 0 ? (
-        <p className="text-2xl">Your search result will appear here.</p>
+        <h2 className="text-2xl">Your search result will appear here.</h2>
       ) : (
         medInfo?.map((med, index) => (
-          <div key={index} className="text-justify shadow-md px-8 py-16 bg-slate-50">
+          <div key={index} className="text-justify shadow-md px-8 py-16 bg-slate-50 result-card mx-2">
             <h2 className="text-2xl font-bold mb-2">Product Info:</h2>
             <p>
               <span className="font-bold">Brand Name:</span> {med.brand_name}

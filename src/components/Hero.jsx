@@ -26,6 +26,7 @@ function Hero() {
         autoClose: 2000,
         toastId: "do-not-duplicate",
       });
+      setLoading(false)
     } else {
       // add data, clean input and scroll to result area //
       setMedInfo(data);
@@ -36,9 +37,9 @@ function Hero() {
   };
 
   return (
-    <div id="hero" className="flex justify-around h-screen bg-slate-50 hero">
+    <div id="hero" className="flex justify-around h-screen bg-slate-50">
       <form onSubmit={handleClick}>
-        <div className="flex flex-col items-end mt-52 px-4">
+        <div className="flex flex-col items-end mt-[25%] px-4">
           <div className="flex flex-col my-2">
             <h1 className="text-3xl font-bold text-zinc-700 mb-3">
               Search for medication or hygiene product info.
@@ -69,7 +70,7 @@ function Hero() {
             Search
           </a>
         </div>
-        <p className="text-center">{loading && <Loading />}</p>
+        <div className="text-center">{loading && <Loading />}</div>
       </form>
     </div>
   );

@@ -9,7 +9,7 @@
   font-family: 'Poppins', sans-serif;
 }
 
-.hero {
+#hero {
   background-image: linear-gradient(#a4a4a451, rgba(105, 105, 105, 0.281)) , url('./images/hero-bg.jpg');
   background-size: cover;
   object-fit: cover;
@@ -19,4 +19,35 @@
   cursor: pointer;
   border-bottom: 2px solid rgb(54, 54, 54);
   margin-bottom: -1px;
+}
+
+#about {
+  background-image: linear-gradient(#a4a4a451, rgba(105, 105, 105, 0.281)) , url('./images/about-bg.jpg');
+  background-size: cover;
+  object-fit: cover;
+}
+
+@media (max-width: 1024px) {
+  .nav-btns {
+    display: none;
+  }
+
+  #result {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem
+  }
+
+  #result img {
+    display: none;
+  }
+
+  #result h2 {
+    font-size: large;
+  }
+
+  .result-card {
+    max-width: 500px;
+  }
+  
 }
