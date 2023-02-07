@@ -3,14 +3,16 @@ import Hero from "./components/Hero";
 import Results from "./components/Results";
 import { ToastContainer } from "react-toastify";
 import 'react-toastify/dist/ReactToastify.css'
+import Navbar from "./components/Navbar";
 
 function App() {
   return (
-    <>
+    <div className="main">
       <ToastContainer limit={1}/>
+      <Navbar />
       <Hero />
       <Results />
-    </>
+    </div>
   );
 }
 

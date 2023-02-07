@@ -8,3 +8,14 @@
   box-sizing: border-box;
   font-family: 'Poppins', sans-serif;
 }
+
+.hero {
+  background-image: linear-gradient(#a4a4a451, rgba(105, 105, 105, 0.281)) , url('./images/hero-bg.jpg');
+  background-size: cover;
+  object-fit: cover;
+}
+
+.nav-btns button:hover {
+  border-bottom: 2px solid rgb(54, 54, 54);
+  margin-bottom: -1px;
+}

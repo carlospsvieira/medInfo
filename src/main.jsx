@@ -5,6 +5,6 @@ import StateProvider from "./context/StateProvider";
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <StateProvider>
-      <App />
+    <App />
   </StateProvider>
 );
