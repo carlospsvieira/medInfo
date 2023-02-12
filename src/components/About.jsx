@@ -5,7 +5,7 @@ function About() {
     <div id="about" className="flex items-center h-screen">
       <div className="w-[600px] mx-[10%]">
         <p className="text-justify text-slate-50 text-xl">
-          " I've always been in the habit of learning about the active ingredients
+          " I've always been in the habit of learning the active ingredients
           in the most common meds and other hygiene products that my family and
           I own at home. This web app brings the most relevant info about these
           products, so you learn about them too. It's not supposed to replace

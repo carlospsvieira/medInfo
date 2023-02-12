@@ -50,7 +50,7 @@ function Hero() {
               value={search}
               onChange={handleChange}
               className="rounded-md bg-slate-100 border-2 px-2 py-2 shadow-sm"
-              placeholder="e.g., Advil"
+              placeholder="e.g., Tylenol"
             />
           </div>
           <a

@@ -16,6 +16,6 @@ export default async function getMedicationByName(medName) {
     return response;
   } catch (err) {
     console.log(err);
-    return;
+    return "We're working on this page so you can have a better experience, sorry for the inconvenience.";
   }
 }
